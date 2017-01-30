@@ -62,7 +62,7 @@ export default class YAxis extends Component<void, any, any> {
 			minBound -= this.props.verticalGridStep;
 			maxBound += this.props.verticalGridStep;
 		}
-		minBound = (minBound < 0) ? 0 : minBound;
+		//minBound = (minBound < 0) ? 0 : minBound;
 		let label = minBound + (maxBound - minBound) / this.props.verticalGridStep * index;
 		label = parseFloat(label.toFixed(3));
 
