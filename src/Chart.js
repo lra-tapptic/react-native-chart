@@ -238,6 +238,8 @@ export default class Chart extends Component<void, any, any> {
 	}
 }
 
+const colorType = PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+
 Chart.propTypes = {
 	// Shared properties between most types
 	// data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)).isRequired,
@@ -249,7 +251,7 @@ Chart.propTypes = {
 	yAxisShortLabel: PropTypes.bool,
 
 	// Bar chart props
-	color: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+	color: PropTypes.arrayOf(PropTypes.oneOfType([colorType, PropTypes.arrayOf(colorType)])),
 	cornerRadius: PropTypes.number,
 	// fillGradient: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])), // TODO
 	widthPercent: PropTypes.number,

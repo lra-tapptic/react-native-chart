@@ -238,6 +238,8 @@ maxVerticalBound:_this2.state.bounds.max}))));
 }}]);return Chart;}(_react.Component);Chart.defaultProps={data:[[]],animated:true,animationDuration:300,axisColor:C.BLACK,axisLabelColor:C.BLACK,axisLineWidth:1,axisTitleColor:C.GREY,axisTitleFontSize:16,chartFontSize:14,color:[],dataPointRadius:3,gridColor:C.BLACK,gridLineWidth:0.5,hideHorizontalGridLines:false,hideVerticalGridLines:false,horizontalScale:1,labelFontSize:10,lineWidth:1,showAxis:true,showDataPoint:false,showGrid:true,showXAxisLabels:true,showYAxisLabels:true,tightBounds:false,verticalGridStep:4,xAxisHeight:20,yAxisWidth:30,yAxisUseDecimal:false,yAxisShortLabel:false};exports.default=Chart;
 
 
+var colorType=_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]);
+
 Chart.propTypes={
 
 
@@ -249,7 +251,7 @@ yAxisUseDecimal:_react.PropTypes.bool,
 yAxisShortLabel:_react.PropTypes.bool,
 
 
-color:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string])),
+color:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([colorType,_react.PropTypes.arrayOf(colorType)])),
 cornerRadius:_react.PropTypes.number,
 
 widthPercent:_react.PropTypes.number,
