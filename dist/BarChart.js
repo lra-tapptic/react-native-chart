@@ -73,7 +73,7 @@ var data=this.props.data||[];
 return(
 _react2.default.createElement(_reactNative.View,{ref:'container',style:[styles.default]},
 _react2.default.createElement(_Grid2.default,this.props),
-data.map(this._drawBar)));
+data[0].map(this._drawBar)));
 
 
 }}]);return BarChart;}(_react.Component);exports.default=BarChart;

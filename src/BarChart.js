@@ -73,7 +73,7 @@ export default class BarChart extends Component<void, any, any> {
 		return (
 			<View ref="container" style={[styles.default]}>
 				<Grid {...this.props} />
-				{data.map(this._drawBar)}
+				{data[0].map(this._drawBar)}
 			</View>
 		);
 	}
