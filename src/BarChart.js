@@ -27,7 +27,7 @@ export default class BarChart extends Component<void, any, any> {
 
 	_drawBar = (_dataPoint : [number, number], index : number) => {
 		const [_x, dataPoint] = _dataPoint;
-		const backgroundColor = this.props.color[0] || C.BLUE;
+		const backgroundColor = (Array.isArray(this.props.color[0]) ? this.props.color[0][index] : this.props.color[0]) || C.BLUE;
 		// the index [0] is facilitate multi-line, fix later if need be
 		const HEIGHT = this.props.height;
 		const WIDTH = this.props.width;
@@ -73,7 +73,7 @@ export default class BarChart extends Component<void, any, any> {
 		return (
 			<View ref="container" style={[styles.default]}>
 				<Grid {...this.props} />
-				{data.map(this._drawBar)}
+				{data[0].map(this._drawBar)}
 			</View>
 		);
 	}
