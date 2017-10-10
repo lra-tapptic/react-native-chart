@@ -1,5 +1,8 @@
+'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src\\Chart.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
-'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);
+
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 var _BarChart=require('./BarChart');var _BarChart2=_interopRequireDefault(_BarChart);
@@ -165,7 +168,7 @@ return this.state.bounds.max>0?this.state.bounds.max:0;
 var components={'line':_LineChart2.default,'bar':_BarChart2.default,'pie':_PieChart2.default};
 var axisAlign=this.props.type==='line'?'left':'center';
 return(
-_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:171}},
 function(){
 var ChartType=components[_this2.props.type]||_BarChart2.default;
 if(_this2.props.showAxis&&Chart!==_PieChart2.default){
@@ -173,10 +176,10 @@ return(
 _react2.default.createElement(_reactNative.View,{
 ref:'container',
 style:[_this2.props.style||{},{flexDirection:'column',flexGrow:1}],
-onLayout:_this2._onContainerLayout},
+onLayout:_this2._onContainerLayout,__source:{fileName:_jsxFileName,lineNumber:176}},
 
-_react2.default.createElement(_reactNative.View,{style:[styles.default,{flexDirection:'row'}]},
-_react2.default.createElement(_reactNative.View,{ref:'yAxis'},
+_react2.default.createElement(_reactNative.View,{style:[styles.default,{flexDirection:'row'}],__source:{fileName:_jsxFileName,lineNumber:181}},
+_react2.default.createElement(_reactNative.View,{ref:'yAxis',__source:{fileName:_jsxFileName,lineNumber:182}},
 _react2.default.createElement(_yAxis2.default,_extends({},
 _this2.props,{
 data:_this2.props.data,
@@ -187,7 +190,7 @@ containerWidth:_this2.state.containerWidth,
 maxVerticalBound:_this2.state.bounds.max,
 yAxisUseDecimal:_this2.props.yAxisUseDecimal,
 yAxisShortLabel:_this2.props.yAxisShortLabel,
-style:{width:_this2.props.yAxisWidth}}))),
+style:{width:_this2.props.yAxisWidth},__source:{fileName:_jsxFileName,lineNumber:183}}))),
 
 
 _react2.default.createElement(ChartType,_extends({},
@@ -196,19 +199,19 @@ data:_this2.props.data,
 width:_this2.state.containerWidth-_this2.props.yAxisWidth,
 height:_this2.state.containerHeight-_this2.props.xAxisHeight,
 minVerticalBound:_this2.state.bounds.min,
-maxVerticalBound:_this2.state.bounds.max}))),
+maxVerticalBound:_this2.state.bounds.max,__source:{fileName:_jsxFileName,lineNumber:196}}))),
 
 
 function(){
 return(
-_react2.default.createElement(_reactNative.View,{ref:'xAxis'},
+_react2.default.createElement(_reactNative.View,{ref:'xAxis',__source:{fileName:_jsxFileName,lineNumber:207}},
 _react2.default.createElement(_xAxis2.default,_extends({},
 _this2.props,{
 width:_this2.state.containerWidth-_this2.props.yAxisWidth,
 data:_this2.props.data,
 height:_this2.props.xAxisHeight,
 align:axisAlign,
-style:{marginLeft:_this2.props.yAxisWidth-1}}))));
+style:{marginLeft:_this2.props.yAxisWidth-1},__source:{fileName:_jsxFileName,lineNumber:208}}))));
 
 
 
@@ -220,7 +223,7 @@ return(
 _react2.default.createElement(_reactNative.View,{
 ref:'container',
 onLayout:_this2._onContainerLayout,
-style:[_this2.props.style||{},styles.default]},
+style:[_this2.props.style||{},styles.default],__source:{fileName:_jsxFileName,lineNumber:223}},
 
 _react2.default.createElement(ChartType,_extends({},
 _this2.props,{
@@ -228,7 +231,7 @@ data:_this2.props.data,
 width:_this2.state.containerWidth,
 height:_this2.state.containerHeight,
 minVerticalBound:_this2.state.bounds.min,
-maxVerticalBound:_this2.state.bounds.max}))));
+maxVerticalBound:_this2.state.bounds.max,__source:{fileName:_jsxFileName,lineNumber:228}}))));
 
 
 
@@ -238,61 +241,61 @@ maxVerticalBound:_this2.state.bounds.max}))));
 }}]);return Chart;}(_react.Component);Chart.defaultProps={data:[[]],animated:true,animationDuration:300,axisColor:C.BLACK,axisLabelColor:C.BLACK,axisLineWidth:1,axisTitleColor:C.GREY,axisTitleFontSize:16,chartFontSize:14,color:[],dataPointRadius:3,gridColor:C.BLACK,gridLineWidth:0.5,hideHorizontalGridLines:false,hideVerticalGridLines:false,horizontalScale:1,labelFontSize:10,lineWidth:1,showAxis:true,showDataPoint:false,showGrid:true,showXAxisLabels:true,showYAxisLabels:true,tightBounds:false,verticalGridStep:4,xAxisHeight:20,yAxisWidth:30,yAxisUseDecimal:false,yAxisShortLabel:false};exports.default=Chart;
 
 
-var colorType=_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]);
+var colorType=_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string]);
 
 Chart.propTypes={
 
 
-type:_react.PropTypes.oneOf(['line','bar','pie']).isRequired,
-highlightColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),
-highlightIndices:_react.PropTypes.arrayOf(_react.PropTypes.number),
-onDataPointPress:_react.PropTypes.func,
-yAxisUseDecimal:_react.PropTypes.bool,
-yAxisShortLabel:_react.PropTypes.bool,
+type:_propTypes2.default.oneOf(['line','bar','pie']).isRequired,
+highlightColor:_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string]),
+highlightIndices:_propTypes2.default.arrayOf(_propTypes2.default.number),
+onDataPointPress:_propTypes2.default.func,
+yAxisUseDecimal:_propTypes2.default.bool,
+yAxisShortLabel:_propTypes2.default.bool,
 
 
-color:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([colorType,_react.PropTypes.arrayOf(colorType)])),
-cornerRadius:_react.PropTypes.number,
+color:_propTypes2.default.arrayOf(_propTypes2.default.oneOfType([colorType,_propTypes2.default.arrayOf(colorType)])),
+cornerRadius:_propTypes2.default.number,
 
-widthPercent:_react.PropTypes.number,
-
-
-fillColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),
-dataPointColor:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string])),
-dataPointFillColor:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string])),
-dataPointRadius:_react.PropTypes.number,
-
-lineWidth:_react.PropTypes.number,
-showDataPoint:_react.PropTypes.bool,
+widthPercent:_propTypes2.default.number,
 
 
+fillColor:_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string]),
+dataPointColor:_propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string])),
+dataPointFillColor:_propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string])),
+dataPointRadius:_propTypes2.default.number,
 
-sliceColors:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string])),
-animationDuration:_react.PropTypes.number,
-axisColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),
-axisLabelColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),
-axisLineWidth:_react.PropTypes.number,
+lineWidth:_propTypes2.default.number,
+showDataPoint:_propTypes2.default.bool,
 
 
 
+sliceColors:_propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string])),
+animationDuration:_propTypes2.default.number,
+axisColor:_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string]),
+axisLabelColor:_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string]),
+axisLineWidth:_propTypes2.default.number,
 
 
-gridColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),
-gridLineWidth:_react.PropTypes.number,
-hideHorizontalGridLines:_react.PropTypes.bool,
-hideVerticalGridLines:_react.PropTypes.bool,
 
-showAxis:_react.PropTypes.bool,
-showGrid:_react.PropTypes.bool,
-showXAxisLabels:_react.PropTypes.bool,
-showYAxisLabels:_react.PropTypes.bool,
-style:_react.PropTypes.any,
-tightBounds:_react.PropTypes.bool,
-verticalGridStep:_react.PropTypes.number,
-horizontalGridStep:_react.PropTypes.number,
 
-xAxisHeight:_react.PropTypes.number,
-xAxisTransform:_react.PropTypes.func,
 
-yAxisTransform:_react.PropTypes.func,
-yAxisWidth:_react.PropTypes.number};
+gridColor:_propTypes2.default.oneOfType([_propTypes2.default.number,_propTypes2.default.string]),
+gridLineWidth:_propTypes2.default.number,
+hideHorizontalGridLines:_propTypes2.default.bool,
+hideVerticalGridLines:_propTypes2.default.bool,
+
+showAxis:_propTypes2.default.bool,
+showGrid:_propTypes2.default.bool,
+showXAxisLabels:_propTypes2.default.bool,
+showYAxisLabels:_propTypes2.default.bool,
+style:_propTypes2.default.any,
+tightBounds:_propTypes2.default.bool,
+verticalGridStep:_propTypes2.default.number,
+horizontalGridStep:_propTypes2.default.number,
+
+xAxisHeight:_propTypes2.default.number,
+xAxisTransform:_propTypes2.default.func,
+
+yAxisTransform:_propTypes2.default.func,
+yAxisWidth:_propTypes2.default.number};

@@ -1,4 +1,6 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='src\\yAxis.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);
+
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 var _util=require('./util');function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
@@ -84,7 +86,7 @@ style:{
 color:_this.props.axisLabelColor,
 fontSize:_this.props.labelFontSize},
 
-key:index},
+key:index,__source:{fileName:_jsxFileName,lineNumber:84}},
 
 label));
 
@@ -102,10 +104,10 @@ style:[
 styles.yAxisContainer,
 this.props.style||{},
 this.props.placement==='left'&&{borderRightColor:this.props.axisColor,borderRightWidth:this.props.axisLineWidth},
-this.props.placement==='right'&&{borderLeftColor:this.props.axisColor,borderLeftWidth:this.props.axisLineWidth}]},
+this.props.placement==='right'&&{borderLeftColor:this.props.axisColor,borderLeftWidth:this.props.axisLineWidth}],__source:{fileName:_jsxFileName,lineNumber:102}},
 
 
 range.map(this._createLabelForYAxis)));
 
 
-}}]);return YAxis;}(_react.Component);YAxis.propTypes={axisColor:_react.PropTypes.any,axisLineWidth:_react.PropTypes.number,data:_react.PropTypes.arrayOf(_react.PropTypes.arrayOf(_react.PropTypes.array)).isRequired,height:_react.PropTypes.number.isRequired,placement:_react.PropTypes.oneOf(['left','right']),verticalGridStep:_react.PropTypes.number.isRequired,yAxisTransform:_react.PropTypes.func,yAxisUseDecimal:_react.PropTypes.bool,yAxisShortLabel:_react.PropTypes.bool};YAxis.defaultProps={placement:'left'};exports.default=YAxis;
+}}]);return YAxis;}(_react.Component);YAxis.propTypes={axisColor:_propTypes2.default.any,axisLineWidth:_propTypes2.default.number,data:_propTypes2.default.arrayOf(_propTypes2.default.arrayOf(_propTypes2.default.array)).isRequired,height:_propTypes2.default.number.isRequired,placement:_propTypes2.default.oneOf(['left','right']),verticalGridStep:_propTypes2.default.number.isRequired,yAxisTransform:_propTypes2.default.func,yAxisUseDecimal:_propTypes2.default.bool,yAxisShortLabel:_propTypes2.default.bool};YAxis.defaultProps={placement:'left'};exports.default=YAxis;
