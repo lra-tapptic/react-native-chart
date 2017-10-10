@@ -1,5 +1,8 @@
+'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='src\\xAxis.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
-'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);
+
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 var _util=require('./util');function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
@@ -50,7 +53,7 @@ styles.xAxisContainer,
 borderTopColor:this.props.axisColor,
 borderTopWidth:this.props.axisLineWidth},
 
-this.props.style]},
+this.props.style],__source:{fileName:_jsxFileName,lineNumber:49}},
 
 
 function(){
@@ -69,7 +72,7 @@ styles.axisText,
 {
 textAlign:_this2.props.align,
 color:_this2.props.axisLabelColor,
-fontSize:_this2.props.labelFontSize}]},
+fontSize:_this2.props.labelFontSize}],__source:{fileName:_jsxFileName,lineNumber:68}},
 
 
 item));
@@ -79,4 +82,4 @@ item));
 }()));
 
 
-}}]);return XAxis;}(_react.Component);XAxis.propTypes={axisColor:_react.PropTypes.any.isRequired,axisLabelColor:_react.PropTypes.any.isRequired,axisLineWidth:_react.PropTypes.number.isRequired,data:_react.PropTypes.arrayOf(_react.PropTypes.arrayOf(_react.PropTypes.array)).isRequired,showXAxisLabels:_react.PropTypes.bool.isRequired,style:_react.PropTypes.any,width:_react.PropTypes.number.isRequired,align:_react.PropTypes.string,labelFontSize:_react.PropTypes.number.isRequired,xAxisTransform:_react.PropTypes.func,horizontalGridStep:_react.PropTypes.number};XAxis.defaultProps={align:'center'};exports.default=XAxis;
+}}]);return XAxis;}(_react.Component);XAxis.propTypes={axisColor:_propTypes2.default.any.isRequired,axisLabelColor:_propTypes2.default.any.isRequired,axisLineWidth:_propTypes2.default.number.isRequired,data:_propTypes2.default.arrayOf(_propTypes2.default.arrayOf(_propTypes2.default.array)).isRequired,showXAxisLabels:_propTypes2.default.bool.isRequired,style:_propTypes2.default.any,width:_propTypes2.default.number.isRequired,align:_propTypes2.default.string,labelFontSize:_propTypes2.default.number.isRequired,xAxisTransform:_propTypes2.default.func,horizontalGridStep:_propTypes2.default.number};XAxis.defaultProps={align:'center'};exports.default=XAxis;
