@@ -72,7 +72,7 @@ export default class LineChart extends Component<void, any, any> {
 		const scale = (containerHeight + 1) / divisor;
 		let horizontalStep;
 		if (data.length === 1) {
-			horizontalStep = containerWidth / data.length;
+			horizontalStep = containerWidth / data[0].length;
 		} else {
 			horizontalStep = containerWidth / uniqueValuesInDataSets(data, 0).length;
 		}
@@ -138,7 +138,7 @@ export default class LineChart extends Component<void, any, any> {
 			let color = (this.props.color[index]) ? this.props.color[index] : C.BLUE;
 			let allDisjointPaths = path[index].map( (singlePath) => {
 				return (
-					<AnimatedShape d={singlePath} stroke={this.props.color[index] || C.BLUE} strokeWidth={this.props.lineWidth} />
+					<AnimatedShape d={singlePath} stroke={this.props.color[index] || C.BLUE} strokeWidth={this.props.lineWidth} key={singlePath} />
 				);
 			});
 			return allDisjointPaths;
@@ -147,7 +147,7 @@ export default class LineChart extends Component<void, any, any> {
 		var multipleFills = dataPoints.map( (dataPointSet, index) => {
 			let allDisjointPaths = fillPath[index].map ( (singlePath, subIndex) => {
 				return (
-					<AnimatedShape d={singlePath} fill={this.props.fillColor} />
+					<AnimatedShape d={singlePath} fill={this.props.fillColor} key={singlePath} />
 				);
 			});
 			return allDisjointPaths;

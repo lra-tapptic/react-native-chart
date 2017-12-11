@@ -72,7 +72,7 @@ var divisor=calculateDivisor(minBound,maxBound);
 var scale=(containerHeight+1)/divisor;
 var horizontalStep=void 0;
 if(data.length===1){
-horizontalStep=containerWidth/data.length;
+horizontalStep=containerWidth/data[0].length;
 }else{
 horizontalStep=containerWidth/(0,_util.uniqueValuesInDataSets)(data,0).length;
 }
@@ -138,7 +138,7 @@ var multipleLines=dataPoints.map(function(dataPointSet,index){
 var color=_this.props.color[index]?_this.props.color[index]:C.BLUE;
 var allDisjointPaths=path[index].map(function(singlePath){
 return(
-_react2.default.createElement(AnimatedShape,{d:singlePath,stroke:_this.props.color[index]||C.BLUE,strokeWidth:_this.props.lineWidth,__source:{fileName:_jsxFileName,lineNumber:141}}));
+_react2.default.createElement(AnimatedShape,{d:singlePath,stroke:_this.props.color[index]||C.BLUE,strokeWidth:_this.props.lineWidth,key:singlePath,__source:{fileName:_jsxFileName,lineNumber:141}}));
 
 });
 return allDisjointPaths;
@@ -147,7 +147,7 @@ return allDisjointPaths;
 var multipleFills=dataPoints.map(function(dataPointSet,index){
 var allDisjointPaths=fillPath[index].map(function(singlePath,subIndex){
 return(
-_react2.default.createElement(AnimatedShape,{d:singlePath,fill:_this.props.fillColor,__source:{fileName:_jsxFileName,lineNumber:150}}));
+_react2.default.createElement(AnimatedShape,{d:singlePath,fill:_this.props.fillColor,key:singlePath,__source:{fileName:_jsxFileName,lineNumber:150}}));
 
 });
 return allDisjointPaths;
