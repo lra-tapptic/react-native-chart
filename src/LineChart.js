@@ -70,7 +70,12 @@ export default class LineChart extends Component<void, any, any> {
 
 		const divisor = calculateDivisor(minBound, maxBound);
 		const scale = (containerHeight + 1) / divisor;
-		const horizontalStep = containerWidth / uniqueValuesInDataSets(data, 0).length;
+		let horizontalStep;
+		if (data.length === 1) {
+			horizontalStep = containerWidth / data.length;
+		} else {
+			horizontalStep = containerWidth / uniqueValuesInDataSets(data, 0).length;
+		}
 
 		const dataPoints = [];
 		const path = [];

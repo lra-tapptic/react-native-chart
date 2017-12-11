@@ -1,4 +1,4 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _slicedToArray=function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[typeof Symbol==='function'?Symbol.iterator:'@@iterator'](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"])_i["return"]();}finally{if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if((typeof Symbol==='function'?Symbol.iterator:'@@iterator')in Object(arr)){return sliceIterator(arr,i);}else{throw new TypeError("Invalid attempt to destructure non-iterable instance");}};}();var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src\\LineChart.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _slicedToArray=function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[typeof Symbol==='function'?Symbol.iterator:'@@iterator'](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"])_i["return"]();}finally{if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if((typeof Symbol==='function'?Symbol.iterator:'@@iterator')in Object(arr)){return sliceIterator(arr,i);}else{throw new TypeError("Invalid attempt to destructure non-iterable instance");}};}();var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src/LineChart.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 
@@ -70,7 +70,12 @@ maxBound+=_this.props.verticalGridStep;
 
 var divisor=calculateDivisor(minBound,maxBound);
 var scale=(containerHeight+1)/divisor;
-var horizontalStep=containerWidth/(0,_util.uniqueValuesInDataSets)(data,0).length;
+var horizontalStep=void 0;
+if(data.length===1){
+horizontalStep=containerWidth/data.length;
+}else{
+horizontalStep=containerWidth/(0,_util.uniqueValuesInDataSets)(data,0).length;
+}
 
 var dataPoints=[];
 var path=[];
@@ -133,7 +138,7 @@ var multipleLines=dataPoints.map(function(dataPointSet,index){
 var color=_this.props.color[index]?_this.props.color[index]:C.BLUE;
 var allDisjointPaths=path[index].map(function(singlePath){
 return(
-_react2.default.createElement(AnimatedShape,{d:singlePath,stroke:_this.props.color[index]||C.BLUE,strokeWidth:_this.props.lineWidth,__source:{fileName:_jsxFileName,lineNumber:136}}));
+_react2.default.createElement(AnimatedShape,{d:singlePath,stroke:_this.props.color[index]||C.BLUE,strokeWidth:_this.props.lineWidth,__source:{fileName:_jsxFileName,lineNumber:141}}));
 
 });
 return allDisjointPaths;
@@ -142,22 +147,22 @@ return allDisjointPaths;
 var multipleFills=dataPoints.map(function(dataPointSet,index){
 var allDisjointPaths=fillPath[index].map(function(singlePath,subIndex){
 return(
-_react2.default.createElement(AnimatedShape,{d:singlePath,fill:_this.props.fillColor,__source:{fileName:_jsxFileName,lineNumber:145}}));
+_react2.default.createElement(AnimatedShape,{d:singlePath,fill:_this.props.fillColor,__source:{fileName:_jsxFileName,lineNumber:150}}));
 
 });
 return allDisjointPaths;
 });
 
 return(
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:152}},
-_react2.default.createElement(_reactNative.View,{style:{position:'absolute'},__source:{fileName:_jsxFileName,lineNumber:153}},
-_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:154}},
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:157}},
+_react2.default.createElement(_reactNative.View,{style:{position:'absolute'},__source:{fileName:_jsxFileName,lineNumber:158}},
+_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:159}},
 multipleLines,
 multipleFills)),
 
 
-_react2.default.createElement(_reactNative.View,{style:{position:'absolute'},__source:{fileName:_jsxFileName,lineNumber:159}},
-_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:160}})),
+_react2.default.createElement(_reactNative.View,{style:{position:'absolute'},__source:{fileName:_jsxFileName,lineNumber:164}},
+_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:165}})),
 
 function(){
 if(!_this.props.showDataPoint)return null;
@@ -165,14 +170,14 @@ if(!_this.props.showDataPoint)return null;
 var multipleDataPoints=dataPoints.map(function(dataPointSet,index){
 var totalDataSet=dataPointSet.map(function(d,i){
 return(
-_react2.default.createElement(_Circle2.default,_extends({key:i},d,{onPress:function onPress(){return alert(i);},__source:{fileName:_jsxFileName,lineNumber:168}})));
+_react2.default.createElement(_Circle2.default,_extends({key:i},d,{onPress:function onPress(){return alert(i);},__source:{fileName:_jsxFileName,lineNumber:173}})));
 
 });
 return totalDataSet;
 });
 
 return(
-_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:175}},
+_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:180}},
 multipleDataPoints));
 
 
@@ -184,18 +189,18 @@ multipleDataPoints));
 {
 if(_reactNative.Platform.OS==='ios'){
 return(
-_react2.default.createElement(_reactNative.View,{style:{overflow:'hidden'},__source:{fileName:_jsxFileName,lineNumber:187}},
-_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:188}})),
-_react2.default.createElement(_reactNative.Animated.View,{style:{height:this.state.height,opacity:this.state.opacity,backgroundColor:'transparent'},__source:{fileName:_jsxFileName,lineNumber:189}},
+_react2.default.createElement(_reactNative.View,{style:{overflow:'hidden'},__source:{fileName:_jsxFileName,lineNumber:192}},
+_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:193}})),
+_react2.default.createElement(_reactNative.Animated.View,{style:{height:this.state.height,opacity:this.state.opacity,backgroundColor:'transparent'},__source:{fileName:_jsxFileName,lineNumber:194}},
 this._drawLine())));
 
 
 
 }
 return(
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:196}},
-_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:197}})),
-_react2.default.createElement(_reactNative.View,{style:{height:this.props.height},__source:{fileName:_jsxFileName,lineNumber:198}},
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:201}},
+_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:202}})),
+_react2.default.createElement(_reactNative.View,{style:{height:this.props.height},__source:{fileName:_jsxFileName,lineNumber:203}},
 this._drawLine())));
 
 
